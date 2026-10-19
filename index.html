@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Zillur Rahim — Data Analyst, Administrative Assistant &amp; Bookkeeper based in Chandpur, Bangladesh. 8+ years of remote data analysis, reporting, bookkeeping, and admin support." />
+  <meta name="author" content="Zillur Rahim" />
+  <title>Zillur Rahim — Data Analyst, Admin Assistant &amp; Bookkeeper</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      --navy: #0b1730;
+      --navy-2: #13244a;
+      --ink: #0f172a;
+      --text: #334155;
+      --muted: #64748b;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --line: #e2e8f0;
+      --accent: #0ea5e9;
+      --accent-dark: #0369a1;
+      --accent-soft: #e0f2fe;
+      --gold: #f59e0b;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --max: 1100px;
+      --sans: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+      --serif: Georgia, "Times New Roman", serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+    body { margin: 0; font-family: var(--sans); color: var(--text); background: var(--bg); line-height: 1.65; font-size: 1.03rem; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { color: var(--accent-dark); text-underline-offset: 3px; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+    h1, h2, h3 { color: var(--ink); line-height: 1.2; margin: 0 0 .6rem; }
+    h2 { font-family: var(--serif); font-size: clamp(1.7rem, 3vw, 2.2rem); }
+    .container { width: min(100% - 2.5rem, var(--max)); margin-inline: auto; }
+    .skip-link { position: absolute; left: 1rem; top: -100px; background: var(--accent); color: #fff; padding: .5rem 1rem; border-radius: 8px; z-index: 999; }
+    .skip-link:focus { top: 1rem; }
+
+    /* Header */
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(11, 23, 48, .92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.08); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: 1rem; }
+    .logo { display: inline-flex; align-items: center; gap: .6rem; color: #fff; text-decoration: none; font-weight: 600; }
+    .logo-mark { display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: 10px; border: 1.5px solid var(--accent); color: #fff; font-family: var(--serif); font-weight: 700; font-size: .9rem; }
+    .site-nav ul { display: flex; gap: 1.4rem; list-style: none; margin: 0; padding: 0; }
+    .site-nav a { color: #cbd5e1; text-decoration: none; font-size: .95rem; font-weight: 500; }
+    .site-nav a:hover { color: #fff; }
+    .nav-toggle { display: none; background: none; border: 1px solid rgba(255,255,255,.25); border-radius: 10px; width: 44px; height: 40px; cursor: pointer; padding: 0; }
+    .nav-toggle span { display: block; width: 20px; height: 2px; background: #fff; margin: 4px auto; border-radius: 2px; transition: transform .2s, opacity .2s; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    /* Hero */
+    .hero { background: radial-gradient(900px 500px at 85% 10%, rgba(14,165,233,.25), transparent 60%), linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%); color: #e2e8f0; padding: 4.5rem 0 5rem; }
+    .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: .45rem; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; color: #7dd3fc; font-weight: 600; margin: 0 0 1rem; }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 4px rgba(34,197,94,.2); }
+    .hero h1 { color: #fff; font-family: var(--serif); font-size: clamp(2.6rem, 6vw, 4rem); letter-spacing: -.01em; margin-bottom: .5rem; }
+    .hero-title { font-size: clamp(1.1rem, 2.2vw, 1.35rem); color: #fff; font-weight: 500; margin: 0 0 1rem; }
+    .hero-title .sep { color: var(--accent); padding: 0 .35rem; }
+    .hero-lead { max-width: 36rem; color: #cbd5e1; margin: 0 0 2rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+    .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .8rem 1.35rem; border-radius: 999px; font-weight: 600; text-decoration: none; font-size: .98rem; transition: transform .15s, background .15s, border-color .15s; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn svg { width: 18px; height: 18px; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #0284c7; color: #fff; }
+    .btn-outline { border: 1.5px solid rgba(255,255,255,.35); color: #fff; }
+    .btn-outline:hover { border-color: #fff; color: #fff; }
+    .portrait { position: relative; justify-self: center; width: min(100%, 320px); }
+    .portrait img { width: 100%; aspect-ratio: 450 / 570; object-fit: cover; border-radius: 22px; box-shadow: 0 25px 60px rgba(0,0,0,.45); border: 1px solid rgba(255,255,255,.12); }
+    .portrait-badge { position: absolute; left: -1.2rem; bottom: 1.4rem; background: #fff; color: var(--ink); border-radius: 14px; padding: .7rem 1rem; box-shadow: var(--shadow); line-height: 1.2; }
+    .portrait-badge strong { display: block; font-family: var(--serif); font-size: 1.6rem; color: var(--accent-dark); }
+    .portrait-badge span { font-size: .82rem; color: var(--muted); }
+
+    /* Sections */
+    .section { padding: 4.5rem 0; }
+    .section-alt { background: #fff; border-block: 1px solid var(--line); }
+    .section-head { max-width: 44rem; margin-bottom: 2.25rem; }
+    .kicker { color: var(--accent-dark); font-weight: 700; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 .4rem; }
+    .lead { font-size: 1.12rem; color: var(--text); margin: 0; }
+
+    .about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 2.5rem; align-items: start; }
+    .facts { list-style: none; margin: 0; padding: 1.25rem 1.5rem; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .facts li { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem 0; border-bottom: 1px dashed var(--line); }
+    .facts li:last-child { border-bottom: 0; }
+    .facts span { color: var(--muted); font-size: .92rem; }
+    .facts strong { color: var(--ink); text-align: right; font-weight: 600; }
+
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; box-shadow: 0 1px 2px rgba(15,23,42,.04); transition: box-shadow .2s, transform .2s; }
+    .card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+    .card .icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--accent-soft); color: var(--accent-dark); margin-bottom: 1rem; }
+    .card .icon svg { width: 22px; height: 22px; }
+    .card h3 { font-size: 1.12rem; }
+    .card p { margin: 0; font-size: .97rem; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .skill-group { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem 1.5rem; }
+    .skill-group h3 { font-size: 1rem; margin-bottom: .8rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; margin: 0; padding: 0; }
+    .chips li { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: .3rem .85rem; font-size: .9rem; color: var(--ink); }
+
+    .timeline { list-style: none; margin: 0; padding: 0 0 0 1.75rem; border-left: 2px solid var(--line); }
+    .timeline > li { position: relative; margin-bottom: 1.5rem; }
+    .timeline > li::before { content: ""; position: absolute; left: calc(-1.75rem - 8px); top: 1.6rem; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3px solid var(--accent); }
+    .job { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.4rem 1.6rem; }
+    .job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem 1rem; margin-bottom: .6rem; }
+    .job h3 { font-size: 1.12rem; margin: 0; }
+    .job .org { margin: .15rem 0 0; color: var(--muted); font-size: .95rem; }
+    .job .dates { font-size: .88rem; font-weight: 600; color: var(--accent-dark); background: var(--accent-soft); border-radius: 999px; padding: .2rem .75rem; align-self: flex-start; white-space: nowrap; }
+    .job ul { margin: 0; padding-left: 1.15rem; }
+    .job li { margin: .2rem 0; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .plain-list { list-style: none; margin: 0; padding: 0; }
+    .plain-list li { display: flex; justify-content: space-between; padding: .65rem 0; border-bottom: 1px solid var(--line); }
+    .plain-list li:last-child { border-bottom: 0; }
+    .plain-list span { color: var(--muted); }
+
+    .contact { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%); color: #cbd5e1; }
+    .contact h2, .contact .kicker { color: #fff; }
+    .contact .kicker { color: #7dd3fc; }
+    .contact .lead { color: #cbd5e1; }
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .contact-item { display: flex; align-items: center; gap: 1rem; padding: 1.15rem 1.25rem; border-radius: var(--radius); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); color: #fff; text-decoration: none; transition: background .15s, border-color .15s; }
+    a.contact-item:hover { background: rgba(255,255,255,.1); border-color: var(--accent); color: #fff; }
+    .contact-item .icon { flex: none; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: rgba(14,165,233,.2); color: #7dd3fc; }
+    .contact-item .icon svg { width: 20px; height: 20px; }
+    .contact-item small { display: block; color: #94a3b8; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
+    .contact-item span { word-break: break-word; }
+
+    .site-footer { background: #070f20; color: #94a3b8; font-size: .9rem; padding: 1.5rem 0; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; }
+    .footer-inner p { margin: 0; }
+    .footer-inner a { color: #cbd5e1; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .nav-toggle { display: block; }
+      .site-nav { position: absolute; top: 64px; left: 0; right: 0; background: var(--navy); border-bottom: 1px solid rgba(255,255,255,.1); display: none; }
+      .site-nav.is-open { display: block; }
+      .site-nav ul { flex-direction: column; gap: 0; padding: .5rem 1.25rem 1rem; }
+      .site-nav a { display: block; padding: .7rem 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+      .hero { padding: 3rem 0 3.5rem; }
+      .hero-grid { grid-template-columns: 1fr; gap: 2.25rem; }
+      .portrait { order: -1; width: min(70%, 260px); }
+      .portrait-badge { left: auto; right: -1rem; bottom: 1rem; }
+      .cards, .skills-grid, .two-col { grid-template-columns: 1fr; }
+      .section { padding: 3.25rem 0; }
+      .timeline { padding-left: 1.25rem; }
+      .timeline > li::before { left: calc(-1.25rem - 8px); }
+      .job { padding: 1.2rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+    @media print {
+      .site-header, .nav-toggle, .actions, .skip-link { display: none !important; }
+      .hero, .contact { background: none; color: #000; }
+      .hero h1, .hero-title, .contact h2, .contact-item { color: #000; }
+      body { background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="Zillur Rahim, back to top">
+        <span class="logo-mark" aria-hidden="true">ZR</span>
+        <span>Zillur Rahim</span>
+      </a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Available for remote work · Chandpur, Bangladesh</p>
+          <h1>Zillur Rahim</h1>
+          <p class="hero-title">Data Analyst<span class="sep">/</span>Administrative Assistant<span class="sep">/</span>Bookkeeper</p>
+          <p class="hero-lead">8+ years helping US teams with data analysis, reporting, bookkeeping, and day-to-day operations, working remotely from Bangladesh.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:282zillu@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              Email me
+            </a>
+            <a class="btn btn-outline" href="https://www.linkedin.com/in/zillu407" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zM9.5 9.75h3.8v1.5h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+        <div class="portrait">
+          <img src="avatar.jpg" alt="Portrait of Zillur Rahim" width="450" height="570" />
+          <div class="portrait-badge"><strong>8+</strong><span>years of experience</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="kicker">About</p>
+          <h2>Reliable remote support for data, books, and operations</h2>
+          <p class="lead">Results-driven Data Analyst, Administrative Assistant &amp; Bookkeeper with 8+ years of experience in data analysis, reporting, bookkeeping, and administrative support. Skilled in Excel, data visualization, CRM systems, and financial data management.</p>
+        </div>
+        <ul class="facts" aria-label="Quick facts">
+          <li><span>Experience</span><strong>8+ years</strong></li>
+          <li><span>Focus</span><strong>Data · Admin · Bookkeeping</strong></li>
+          <li><span>Bookkeeping tools</span><strong>QBO · Xero · Wave</strong></li>
+          <li><span>Languages</span><strong>English · Bangla · Hindi</strong></li>
+          <li><span>Based in</span><strong>Chandpur, Bangladesh</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="services">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Services</p>
+          <h2>How I can help</h2>
+          <p class="lead">Virtual administrative assistance and bookkeeping, backed by hands-on data work.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div>
+            <h3>Data analysis &amp; reporting</h3>
+            <p>Sales data analysis and clear reports for management, using Excel, SQL, Power BI, and Python.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div>
+            <h3>Bookkeeping &amp; accounting</h3>
+            <p>AP &amp; AR, journal entries, trial ledger, reconciliation, financial reports, and tax preparation in QuickBooks Online, Xero, and Wave.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M15 9.5c0-1.1-1.3-2-3-2s-3 .9-3 2 1.3 1.8 3 2.2 3 1.1 3 2.3-1.3 2-3 2-3-.9-3-2"/></svg></div>
+            <h3>Payroll</h3>
+            <p>Payroll setup and runs, deductions and taxes, hours and time-off tracking, and paystubs.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+            <h3>Virtual administrative assistance</h3>
+            <p>Calendars and schedules, meeting minutes, team coordination, file organization, and day-to-day operations.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+            <h3>Research &amp; bids</h3>
+            <p>Client and property research, auction and lien records, research &amp; purchasing, and federal and non-government bid documentation and submission.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div>
+            <h3>Data &amp; CRM management</h3>
+            <p>Keeping records clean and organized across CRM systems and shared files.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Skills</p>
+          <h2>Core skills &amp; tools</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Data</h3>
+            <ul class="chips"><li>Data Analysis</li><li>Excel</li><li>SQL</li><li>Power BI</li><li>Python for data science</li><li>Data visualization</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Bookkeeping</h3>
+            <ul class="chips"><li>QuickBooks Online</li><li>Xero</li><li>Wave</li><li>Payroll</li><li>Reconciliation</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Admin, office &amp; CRM</h3>
+            <ul class="chips"><li>Administrative support</li><li>Microsoft Word</li><li>All major CRMs</li><li>Scheduling</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Design, web &amp; commerce</h3>
+            <ul class="chips"><li>Adobe Photoshop</li><li>Illustrator</li><li>HTML</li><li>CSS</li><li>WordPress</li><li>E-commerce / Dropshipping</li><li>Futures trading</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="experience">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Experience</p>
+          <h2>Work history</h2>
+        </div>
+        <ol class="timeline">
+          <li>
+            <article class="job">
+              <div class="job-head">
+                <div><h3>Data Analyst &amp; Admin Assistant</h3><p class="org">United Services &amp; United Land Services · Stuart, FL</p></div>
+                <span class="dates">Apr 2024 – Aug 2025</span>
+              </div>
+              <ul>
+                <li>Analyzed sales data and created reports for admin</li>
+                <li>Federal and non-government bids: finding, documentation, and submission</li>
+                <li>Research and purchasing</li>
+                <li>Bookkeeping in QuickBooks and Wave</li>
+                <li>Managed inspections</li>
+              </ul>
+            </article>
+          </li>
+          <li>
+            <article class="job">
+              <div class="job-head">
+                <div><h3>Administrative Assistant</h3><p class="org">United Freight Services · Stuart, FL</p></div>
+                <span class="dates">Sep 2022 – Feb 2024</span>
+              </div>
+              <ul>
+                <li>Tracked and prepared water delivery and freight trip information</li>
+                <li>Estimated fuel and mileage</li>
+                <li>Set up and ran workers' payroll and prepared paystubs</li>
+                <li>Client research</li>
+                <li>Accounting: AP &amp; AR, journal entries, trial ledger, reconciliation, financial reports, tax preparation</li>
+                <li>Prepared minutes of meetings, seminars, and conferences; maintained all workers' schedules</li>
+              </ul>
+            </article>
+          </li>
+          <li>
+            <article class="job">
+              <div class="job-head">
+                <div><h3>Data Researcher</h3><p class="org">Ultimate Asset Recovery Group · Stuart, FL</p></div>
+                <span class="dates">Jan 2020 – May 2022</span>
+              </div>
+              <ul>
+                <li>Found properties to buy and searched property auction records</li>
+                <li>Logged specific counties' foreclosure sales and tax deed sales</li>
+                <li>Scheduled auctions and researched lien data</li>
+                <li>Data management and CRM management</li>
+              </ul>
+            </article>
+          </li>
+          <li>
+            <article class="job">
+              <div class="job-head">
+                <div><h3>Executive Assistant</h3><p class="org">Signature Sweets Chocolate &amp; Ice cream · Stuart, FL</p></div>
+                <span class="dates">Apr 2019 – Dec 2019</span>
+              </div>
+              <ul>
+                <li>Accounting: AP &amp; AR, journal entries, trial ledger, reconciliation, financial reports, tax preparation</li>
+                <li>Set up workers' payroll (deductions, taxes), ran payroll, tracked paychecks, prepared paystubs</li>
+              </ul>
+            </article>
+          </li>
+          <li>
+            <article class="job">
+              <div class="job-head">
+                <div><h3>Executive Assistant</h3><p class="org">FQN Community Network · Stanford, CA</p></div>
+                <span class="dates">Aug 2015 – Nov 2018</span>
+              </div>
+              <ul>
+                <li>Prepared budgets, financial reports, and tax preparation</li>
+                <li>Onboarded new recruits and taught organizing, file sharing, scheduling, meeting prep, and data management</li>
+                <li>Tracked workers' hours, bonuses, deductions, taxes, and time off; ran payroll</li>
+                <li>Maintained schedules and calendars; general data organizing and team management</li>
+              </ul>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <div class="two-col">
+          <div class="card">
+            <p class="kicker">Education</p>
+            <ul class="plain-list">
+              <li><strong>Diploma in Commerce</strong><span>2003</span></li>
+              <li><strong>SSC</strong><span>1998</span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <p class="kicker">Languages</p>
+            <ul class="plain-list">
+              <li><strong>English</strong></li>
+              <li><strong>Bangla</strong></li>
+              <li><strong>Hindi</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <p class="kicker">Contact</p>
+        <h2>Let's work together</h2>
+        <p class="lead">Open to remote data analysis, bookkeeping, and administrative support work.</p>
+        <div class="contact-grid">
+          <a class="contact-item" href="mailto:282zillu@gmail.com">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+            <span><small>Email</small>282zillu@gmail.com</span>
+          </a>
+          <a class="contact-item" href="https://www.linkedin.com/in/zillu407" target="_blank" rel="noopener noreferrer">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zM9.5 9.75h3.8v1.5h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4z"/></svg></span>
+            <span><small>LinkedIn</small>linkedin.com/in/zillu407</span>
+          </a>
+          <!-- WHATSAPP (off by default). To show it, replace this whole comment with the next line, putting your number (country code, digits only) in both places:
+          <a class="contact-item" href="https://wa.me/880XXXXXXXXXX" target="_blank" rel="noopener noreferrer"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg></span><span><small>WhatsApp</small>+880XXXXXXXXXX</span></a>
+          -->
+          <div class="contact-item">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 1 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+            <span><small>Location</small>Chandpur, Bangladesh</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Zillur Rahim</p>
+      <p><a href="#top">Back to top ↑</a></p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var y = document.getElementById("year");
+      if (y) y.textContent = new Date().getFullYear();
+      var toggle = document.getElementById("nav-toggle");
+      var nav = document.getElementById("site-nav");
+      function setOpen(open) {
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        nav.classList.toggle("is-open", open);
+      }
+      toggle.addEventListener("click", function () { setOpen(toggle.getAttribute("aria-expanded") !== "true"); });
+      nav.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setOpen(false); }); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
+    })();
+  </script>
+</body>
+</html>
