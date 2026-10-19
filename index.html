@@ -182,6 +182,16 @@
     }
     .portrait { width: min(100%, 220px); }
     @media (max-width: 900px) { .portrait { width: min(55%, 180px); } }
+
+    /* Scroll animations */
+    .reveal { opacity: 0; transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); will-change: transform, opacity; }
+    .reveal.from-left { transform: translateX(-60px); }
+    .reveal.from-right { transform: translateX(60px); }
+    .reveal.from-up { transform: translateY(50px); }
+    .reveal.from-zoom { transform: scale(.9); }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; transition: none; } }
+    @media print { .reveal { opacity: 1 !important; transform: none !important; } }
   </style>
 </head>
 <body>
@@ -472,6 +482,33 @@
       nav.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setOpen(false); }); });
       document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
     })();
+  </script>
+
+  <script>
+  (function () {
+    var groups = [
+      ['.hero-grid > :first-child', 'from-left'], ['.portrait', 'from-right'],
+      ['.section-head', 'from-up'], ['#about .container > * > *', 'from-up'],
+      ['.card', 'from-zoom'], ['.skill-group', 'from-up'],
+      ['.timeline > li', 'alt'], ['#education .container > * > *', 'from-up'],
+      ['.contact-item', 'from-up']
+    ];
+    var els = [];
+    groups.forEach(function (g) {
+      document.querySelectorAll(g[0]).forEach(function (el, i) {
+        if (el.classList.contains('reveal')) return;
+        var dir = g[1] === 'alt' ? (i % 2 ? 'from-right' : 'from-left') : g[1];
+        el.classList.add('reveal', dir);
+        el.style.transitionDelay = (i % 3) * 0.12 + 's';
+        els.push(el);
+      });
+    });
+    if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.target.classList.toggle('in', e.isIntersecting); });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  })();
   </script>
 </body>
 </html>
