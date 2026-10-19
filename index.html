@@ -169,6 +169,19 @@
       .hero h1, .hero-title, .contact h2, .contact-item { color: #000; }
       body { background: #fff; }
     }
+
+    /* Dark green theme for middle sections */
+    @media screen {
+      body { background: #0d2b1f; }
+      .section:not(.contact) { background: #0d2b1f; --ink: #f0fdf4; --text: #d1e7da; --muted: #9cc3ad; --line: rgba(255,255,255,.12); --card: #143a2a; --bg: #103424; --accent-soft: rgba(52,211,153,.15); --accent-dark: #6ee7b7; color: var(--text); }
+      .section-alt { background: #0a2419 !important; border-block: 1px solid rgba(255,255,255,.08); }
+      .section:not(.contact) .chips li { background: #1b4734; color: #ecfdf5; border-color: rgba(255,255,255,.14); }
+      .section:not(.contact) .timeline > li::before { background: #0d2b1f; border-color: #34d399; }
+      .section:not(.contact) a { color: #6ee7b7; }
+      .card, .job, .facts { box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+    }
+    .portrait { width: min(100%, 220px); }
+    @media (max-width: 860px) { .portrait { width: min(55%, 180px); } }
   </style>
 </head>
 <body>
