@@ -505,7 +505,8 @@
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) { e.target.classList.toggle('in', e.isIntersecting); });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-    els.forEach(function (el) { io.observe(el); });
+    var vh = window.innerHeight || 800;
+    els.forEach(function (el) { var r = el.getBoundingClientRect(); if (r.top < vh && r.bottom > 0) { requestAnimationFrame(function () { el.classList.add('in'); }); } io.observe(el); });
   })();
   </script>
 </body>
